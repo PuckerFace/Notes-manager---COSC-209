@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --bg: #2a2438;
+  --light: #dbd8e3;
+  --secondary: #5c5470;
+  --secondary-light: #6a627de6;
+  --primary: #352f44;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg);
+  color: var(--light);
+}
+h1 {
+  font-size: 2rem;
+  color: var(--bg);
+}
+.container {
+  min-height: 100vh;
+  width: 100%;
+  display: grid;
+  padding: 50px;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 30px;
+  background-color: var(--secondary-light);
+  border-bottom: 2px solid var(--light);
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+a {
+  display: inline-block;
+  font-size: 18px;
+  text-decoration: none;
+  color: var(--primary);
+  font-weight: 500;
+}
+a:hover {
+  color: var(--bg);
+}
+.wrapper {
+  background: linear-gradient(#2a2438, #352f44),
+    url(images/pexels-jessbaileydesign-1558691.jpg);
+}

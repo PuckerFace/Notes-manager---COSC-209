@@ -1,0 +1,30 @@
+.content {
+  width: 500px;
+  background-color: var(--light);
+  color: var(--primary);
+  border-radius: 15px;
+  justify-self: center;
+  align-self: center;
+  padding: 20px;
+  font-size: 20px;
+}
+p {
+  margin-bottom: 10px;
+}
+.button {
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background-color: var(--primary);
+  color: var(--light);
+}
+
+.button:hover {
+  color: var(--primary);
+  background-color: transparent;
+  border: 2px solid var(--primary);
+}

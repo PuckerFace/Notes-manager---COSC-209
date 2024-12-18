@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="history.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="header">
+      <h1>TO DO LIST</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="contact.html">List</a>
+        <a href="services.html">History</a>
+      </nav>
+    </div>
+
+    <div class="container">
+      <div class="content" id="content">
+        <div id="text">
+          <a href="services.html" class="button">Go Back</a>
+        </div>
+      </div>
+    </div>
+    <script>
+      const fileContent = document.getElementById('text');
+      const fileDiv = document.getElementById('content');
+
+      fetch('/json')
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+          if (data.length === 0) {
+            fileContent.innerHTML = '<p>No to do list has been added</p>';
+          } else {
+            data.forEach((item, index) => {
+              fileContent.innerHTML += `
+            <p>
+                <h3>Entry ${index + 1}</h3>
+              Name: ${item.username}
+              <br>
+              To do: 
+              ${item.notes}
+            </p>
+              
+              `;
+              fileDiv.appendChild(fileContent);
+            });
+          }
+        })
+        .catch((error) => console.error('Error fetching data ', error));
+    </script>
+  </body>
+</html>
